@@ -264,6 +264,13 @@ namespace DeathRun.Patchers
         protected override float PowerCapacity => BatteryCapacity;
         protected override EquipmentType ChargerType { get; } = EquipmentType.None; //EquipmentType.BatteryCharger;
 
+        protected override Atlas.Sprite GetItemSprite()
+        {
+            string mainDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+
+            return ImageUtils.LoadSpriteFromFile(Path.Combine(mainDirectory, @"Assets\AcidBattery.png"));
+        }
+
         protected override TechData GetBlueprintRecipe()
         {
             return new TechData
@@ -307,6 +314,13 @@ namespace DeathRun.Patchers
         protected override TechType BaseType { get; } = TechType.PowerCell;
         protected override float PowerCapacity => PowerCellCapacity;
         protected override EquipmentType ChargerType { get; } = EquipmentType.PowerCellCharger;
+
+        protected override Atlas.Sprite GetItemSprite()
+        {
+            string mainDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+
+            return ImageUtils.LoadSpriteFromFile(Path.Combine(mainDirectory, @"Assets\AcidPowerCell.png"));
+        }
 
         protected override TechData GetBlueprintRecipe()
         {
