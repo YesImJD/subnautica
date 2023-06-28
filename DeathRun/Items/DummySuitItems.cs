@@ -7,6 +7,9 @@ namespace DeathRun.Items
 {
     using SMLHelper.V2.Assets;
     using SMLHelper.V2.Handlers;
+    using SMLHelper.V2.Utility;
+    using System.IO;
+    using System.Reflection;
     using UnityEngine;
 
     internal abstract class DummySuitItems : Spawnable
@@ -57,6 +60,14 @@ namespace DeathRun.Items
             : base(classID: "rivereelscale", friendlyName: "River Prowler Scale", description: "A scale from the head of a River Prowler. Has uses in depth-resistant fabrication.")
         {
             OnFinishedPatching += SetStaticTechType;
+
+        }
+
+        protected override Atlas.Sprite GetItemSprite()
+        {
+            string mainDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+
+            return ImageUtils.LoadSpriteFromFile(Path.Combine(mainDirectory, @"Assets\rivereelscale.png"));
         }
 
         protected override TechType BaseType { get; } = TechType.StalkerTooth;
@@ -74,6 +85,13 @@ namespace DeathRun.Items
             OnFinishedPatching += SetStaticTechType;
         }
 
+        protected override Atlas.Sprite GetItemSprite()
+        {
+            string mainDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+
+            return ImageUtils.LoadSpriteFromFile(Path.Combine(mainDirectory, @"Assets\lavalizardscale.png"));
+        }
+
         protected override TechType BaseType { get; } = TechType.StalkerTooth;
 
         public override string AssetsFolder { get; } = @"DeathRun/Assets";
@@ -87,6 +105,13 @@ namespace DeathRun.Items
             : base(classID: "thermophilesample", friendlyName: "Thermophile Bacterial Sample", description: "A viable sample of a unique thermophile bacteria found in Lava Larvae. Undergoes chemosynthesis at high temperatures.")
         {
             OnFinishedPatching += SetStaticTechType;
+        }
+
+        protected override Atlas.Sprite GetItemSprite()
+        {
+            string mainDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+
+            return ImageUtils.LoadSpriteFromFile(Path.Combine(mainDirectory, @"Assets\thermophilesample.png"));
         }
 
         protected override TechType BaseType { get; } = TechType.StalkerTooth;

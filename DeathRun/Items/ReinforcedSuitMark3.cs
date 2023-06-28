@@ -6,7 +6,10 @@
 namespace DeathRun.Items
 {
     using System.Collections.Generic;
+    using System.IO;
+    using System.Reflection;
     using SMLHelper.V2.Crafting;
+    using SMLHelper.V2.Utility;
 
     class ReinforcedSuitMark3 : ReinforcedSuitsCore
     {
@@ -18,6 +21,13 @@ namespace DeathRun.Items
 
         protected override TechType BaseType { get; } = TechType.ReinforcedDiveSuit;
         protected override EquipmentType DiveSuit { get; } = EquipmentType.Body;
+
+        protected override Atlas.Sprite GetItemSprite()
+        {
+            string mainDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+
+            return ImageUtils.LoadSpriteFromFile(Path.Combine(mainDirectory, @"Assets\reinforcedsuit3.png"));
+        }
 
         protected override TechData GetBlueprintRecipe()
         {

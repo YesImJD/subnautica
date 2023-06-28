@@ -6,7 +6,10 @@
 namespace DeathRun.Items
 {
     using System.Collections.Generic;
+    using System.IO;
+    using System.Reflection;
     using SMLHelper.V2.Crafting;
+    using SMLHelper.V2.Utility;
 
     class PhotosynthesisSmallTank : O2TanksCore
     {
@@ -18,6 +21,13 @@ namespace DeathRun.Items
 
         protected override TechType BaseType { get; } = TechType.Tank;
         protected override EquipmentType SpecialtyO2Tank { get; } = EquipmentType.Tank;
+
+        protected override Atlas.Sprite GetItemSprite()
+        {
+            string mainDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+
+            return ImageUtils.LoadSpriteFromFile(Path.Combine(mainDirectory, @"Assets\photosynthesissmalltank.png"));
+        }
 
         protected override TechData GetBlueprintRecipe()
         {
