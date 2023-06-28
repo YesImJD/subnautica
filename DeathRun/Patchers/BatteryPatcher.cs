@@ -210,6 +210,21 @@ namespace DeathRun.Patchers
         public override string[] StepsToFabricatorTab { get; } = PathToNewTab;
         public override TechType RequiredForUnlock { get; } = TechType.AcidMushroom; // These will unlock once the player acquires an Acid Mushroom
 
+        public override IEnumerator GetGameObjectAsync(IOut<GameObject> gameObject)
+        {
+            CoroutineTask<GameObject> task = CraftData.GetPrefabForTechTypeAsync(this.BaseType);
+            yield return task;
+
+            GameObject originalPrefab = task.GetResult();
+            var resultPrefab = GameObject.Instantiate(originalPrefab);
+
+            Battery battery = resultPrefab.GetComponent<Battery>();
+
+            battery._capacity = this.PowerCapacity;
+            battery.name = $"{this.ClassID}BatteryCell";
+            gameObject.Set(resultPrefab);
+        }
+
         public override GameObject GetGameObject()
         {
             GameObject prefab = CraftData.GetPrefabForTechTypeAsync(this.BaseType).GetResult();
