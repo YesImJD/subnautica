@@ -17,6 +17,7 @@ using SMLHelper.V2.Utility;
 using System.Collections.Generic;
 using SMLHelper.V2.Crafting;
 using System.Text;
+using System.Collections;
 
 namespace DeathRun.Patchers
 { 
