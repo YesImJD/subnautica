@@ -1,11 +1,11 @@
-﻿DEATH RUN - 2.2.2 - by Cattlesquat "standing on the shoulders of giants"
+﻿DEATH RUN - 3.0.2 - by Cattlesquat "standing on the shoulders of giants"
 
 Turns Subnautica into a "roguelike" where everything is harder and the only real question is how LONG you can survive.
 
 
 :: REQUIREMENTS ::
-• QMOD manager
-• SML Helper v2
+• BepinEx 5.4.21.0
+• SML Helper v2.15.0.1
 
 :: FEATURES ::
 • "Death Timer" and "Cause of Death"
@@ -19,6 +19,9 @@ Turns Subnautica into a "roguelike" where everything is harder and the only real
 • Vehicles and the Habitat Builder much more expensive
 
 -------------------------------------------------------------------------------------------------------------
+• 3.0.2 - Fixed broken batteries and missing icons
+• 3.0.1 - Removed stuck out of breath message
+• 3.0.0 - Updated for Subnautica 2.0
 • 2.2.2 - Costs of Bioreactor/Thermal Plant/Nuclear Reactor increased
 • 2.2.2 - "Worse than DeathRun" option added for Scans Required
 • 2.2.2 - "Pescatarian" diet challenge (fish ONLY) added
@@ -122,8 +125,8 @@ Turns Subnautica into a "roguelike" where everything is harder and the only real
 • Option to pick specific starting location instead of randomizing
 
 REQUIRED MODS::
-- QMod Manager
-- SML Helper v2
+• BepinEx 5.4.21.0
+• SML Helper v2.15.0.1
 
 :: CREDITS ::
 ♦ Cattlesquat - mod creator and maintainer
