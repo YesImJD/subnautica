@@ -112,8 +112,7 @@
       <HintPath>..\packages\Subnautica.GameLibs.71288.0.0-r.0\lib\net472\Sentry.dll</HintPath>
     </Reference>
     <Reference Include="SMLHelper">
-      <HintPath>..\..\..\..\Desktop\New folder (6)\SMLHelper.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\..\Desktop\substuff\SMLHelper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
